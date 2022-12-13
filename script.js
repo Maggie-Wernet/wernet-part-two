@@ -22,7 +22,7 @@ If even with par, the message should read "Good game, (name). Your total par was
 */
 
 //prompt for playerName and for name and holeCount
-var playerName = prompt("Welcome to GC mini golf! What is your name?");
+let playerName = prompt("Welcome to GC mini golf! What is your name?");
 
 let holeCount = "Hi " + playerName + "! Would you like to play 3 or 6 holes?";
 
@@ -41,7 +41,7 @@ if (holeCount == 6) {
   par = 18;
 }
 for (let i = 0; i < holeCount; i++) {
-  let totalScore = Number(prompt("How many putts for hole " + [i + i] + "?"));
+  let totalScore = Number(prompt("How many putts for hole " + [i + 1] + "?"));
   total += totalScore;
 }
 let score = total - par;
@@ -50,13 +50,11 @@ let score = total - par;
 
 if (score < 0) {
   console.log(
-    "Great job " + playerName + "! Your total par was: " + score + "."
+    "Great job, " + playerName + "! Your total par was: " + score + "."
   );
 }
 if (score == 0) {
-  console.log(
-    "Good game, " + playerName + ". Your total par was: " + score + "0"
-  );
+  console.log("Good game, " + playerName + ". Your total par was: 0.");
 }
 if (score > 0) {
   console.log(
